@@ -3,8 +3,9 @@ layout: post
 title: First week at metis!
 author: "Douglas Lee"
 categories: journal
-tags: [documentation,sample]
+tags: [project, pandas, mta]
 image: mountains.jpg
+visible: 1
 ---
 
 The focus of the first week was the Benson project. It was a group project aiming to expose us to the pandas python package and to real world data by making use of subway turnstile data. For our project, my group decided to use the turnstile data to look for a new location for a potential cat cafe. I felt a bit hesitant as I thought it would be hard to find useful data, but the project actually turned out really well. 
@@ -15,7 +16,7 @@ To supplement the turnstile data, we decided to look for the number of pet store
 
 Below is our main figure, a scatter plot of a station's daily foot traffic compared with the number of pet stores near a station. 
 
-![pet subway scatter plot]({{ site.baseurl }}/img/pet_subway_scatter.png)
+![pet subway scatter plot]({{ site.github.url }}/assets/img/pet_subway_scatter.png)
 
 Looking closer at our top five stations, it turned out that they actually belong to two neighborhoods, hell's kitchen and NoHo. This suggests that the stations may be sampling overlapping groups of pet stores, but it still shows that there is a high density of pet stores in the area. Two of the currently operating cat cafes are around the SoHo area. Coincidence? Maybe not. 
 
