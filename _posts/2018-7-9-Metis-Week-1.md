@@ -4,9 +4,11 @@ title: First week at metis!
 author: "Douglas Lee"
 categories: journal
 tags: [project, pandas, mta]
-image: mountains.jpg
+image: subwaycat.jpg 
 visible: 1
 ---
+
+Photo credit: Ian Westcott, https://www.flickr.com/photos/iandavid/3804456709 
 
 The focus of the first week was the Benson project. It was a group project aiming to expose us to the pandas python package and to real world data by making use of subway turnstile data. For our project, my group decided to use the turnstile data to look for a new location for a potential cat cafe. I felt a bit hesitant as I thought it would be hard to find useful data, but the project actually turned out really well. 
 
@@ -22,5 +24,4 @@ Looking closer at our top five stations, it turned out that they actually belong
 
 After our presentation of the Benson project today, our first "week" at metis is now officially complete. Our first week has been a little awkward because July 4th landed right in the middle, so it spilled over to Monday. It was a fortunate coincidence as it gave me extra time to absorb the first week's material. Even with the solutions, it definitely takes time and effort just to emulate and understand the code. 
 
-It's been challenging and week two is supposed to involve more math, one of my weaknesses, so time to see how it goes!
 
