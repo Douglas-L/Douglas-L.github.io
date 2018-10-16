@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-I am a graduate from the University of Wisconsin - Madison with bachelor degrees in animal science and biochemistry. I am interested in sustainable agriculture. 
+I graduated from Metis, a 12 week, in person data science bootcamp. I also earned bachelor degrees in animal science and biochemistry from the University of Wisconsin - Madison. I am interested in sustainable agriculture and making data driven decisions. 
 
 
 <!-- ### Getting Started
