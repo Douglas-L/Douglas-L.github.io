@@ -60,9 +60,10 @@ I could have refined this model further but the broad leaf dock is a very narrow
 To get a useful model, I needed to expand beyond Kaggle and broad leaf docks. The first place I looked was ImageNet, which is the original image database that VGG16 and other pretrained networks benchmark on. The best thing about this is that images are labeled by people, so you are not just relying on search terms to get your labels. Furthermore, they provide a text file with a list of urls, so it was straightforward for me to use the Request python package and get those images. With that said, Im@genet did not come without problems, such as many dead links, irregular image sizes, and unrepresentative images. The first two problems I overcame by building in exception catching blocks and adding in resizing that preserves the original aspect ratio, respectively. 
 
 | Clover Leaf                |  Clover Flower      | Thistle Flower|
-|------------------------|-------------------------|-----|
+|-----|-----|-----|
 |![cloverleaf](../assets/img/red_clover_leaf344.jpeg)| ![clover flower](../assets/img/red_clover_flower312.jpeg)  |![thistle](../assets/img/bull_thistle_flower719.jpeg)|
-Leafy (L) versus flowering(M) state of a clover, a forb. And a bull thistle flower(R), a weed.
+|Forb | Forb| Weed|
+
 
 The last problem was the trickiest. As I trained a new CNN classifier on the ImageNet data, using many of the same steps as the simple binary problem I practiced with earlier but expanding to a multiclass problem, I noticed that clovers were often being misclassified as a weed, rather than the forb that it is. Part of the issue is that the only difference between a forb and a weed is whether you find the plant desirable or not, so they are likely to share physiological features. The even bigger issue is that the flowers are the most distinguishing, and often most aesthetic, feature of a plant, and they are completely dominant in the ImageNet photos. However, a thriving pasture should have plants in their vegetative, or leafy, state for optimal nutritional value, well before they develop any flowers. Therefore, if I were to give it pasture photos, the model will not have any success classifying plants in their leafy states when all the model has seen are flowers! 
 
