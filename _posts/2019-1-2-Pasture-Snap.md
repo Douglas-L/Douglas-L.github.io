@@ -38,7 +38,7 @@ Above is a drawing of Pasture Snap, the idea I pitched for my passion project du
 Machine learning has a lot of potential applications agriculture, but the big problem is getting someone to actually gather the data. Most farmers won't have the time to take soil samples or record whatever observation you need with all the things they have to work on. Unless you make it really easy. Like taking a photo with your phone.
 
 
-<a name='binary'/></a>
+<a name='binary'></a>
 ## Binary Classification
 
 Data science is an iterative process, so I took the same approach to Pasture Snap. I started with a simple binary classification problem to become familiar with convolutional neural networks (CNNs) and Keras, a wrapper for Tensorflow and deep learning architecture. Conveniently, I found a [collection of broad leaved dock images](https://www.kaggle.com/gavinarmstrong/open-sprayer-images/home) on Kaggle meant for training an open sourced weed sprayer land drone. This was a perfect place to start because the images are very relevant to my problem and Kaggle data sets are straightforward to work with.
@@ -59,8 +59,10 @@ I could have refined this model further but the broad leaf dock is a very narrow
 
 To get a useful model, I needed to expand beyond Kaggle and broad leaf docks. The first place I looked was ImageNet, which is the original image database that VGG16 and other pretrained networks benchmark on. The best thing about this is that images are labeled by people, so you are not just relying on search terms to get your labels. Furthermore, they provide a text file with a list of urls, so it was straightforward for me to use the Request python package and get those images. With that said, Im@genet did not come without problems, such as many dead links, irregular image sizes, and unrepresentative images. The first two problems I overcame by building in exception catching blocks and adding in resizing that preserves the original aspect ratio, respectively. 
 
-![cloverleaf](../assets/img/red_clover_leaf344.jpeg) ![clover flower](../assets/img/red_clover_flower312.jpeg)  ![thistle](../assets/img/bull_thistle_flower719.jpeg)
-Leafy (L) versus flowering(M) state of a clover, a forb. And a bull thistle flower(R).
+| Clover Leaf                |  Clover Flower      | Thistle Flower|
+|------------------------|-------------------------|-----|
+|![cloverleaf](../assets/img/red_clover_leaf344.jpeg)| ![clover flower](../assets/img/red_clover_flower312.jpeg)  |![thistle](../assets/img/bull_thistle_flower719.jpeg)|
+Leafy (L) versus flowering(M) state of a clover, a forb. And a bull thistle flower(R), a weed.
 
 The last problem was the trickiest. As I trained a new CNN classifier on the ImageNet data, using many of the same steps as the simple binary problem I practiced with earlier but expanding to a multiclass problem, I noticed that clovers were often being misclassified as a weed, rather than the forb that it is. Part of the issue is that the only difference between a forb and a weed is whether you find the plant desirable or not, so they are likely to share physiological features. The even bigger issue is that the flowers are the most distinguishing, and often most aesthetic, feature of a plant, and they are completely dominant in the ImageNet photos. However, a thriving pasture should have plants in their vegetative, or leafy, state for optimal nutritional value, well before they develop any flowers. Therefore, if I were to give it pasture photos, the model will not have any success classifying plants in their leafy states when all the model has seen are flowers! 
 
@@ -70,10 +72,10 @@ The last problem was the trickiest. As I trained a new CNN classifier on the Ima
 To address the lack of leafy plant images, I scraped a new set of images from Pl@ntNet, a crowd sourced plant image database with closeups on the various plant organs beyond just flowers. Scraping these images presented a new challenge because the website uses JavaScript to load its image gallery, so a simple request would not retrieve anything. I took this opportunity to learn to use a Selenium WebDriver to load the image gallery and get the urls of the individual images. Even with the Pl@ntNet images, there was a severe lack of good grass photos because they only focused on the single blade. Fortunately, there were plenty of pasture grass images from the binary classification data. Putting these sources together, I had over 20000 training images, albeit with an uneven distribution. 
 
 
-<a name="presentation"/></a>
+<a name="presentation"></a>
 ## Metis Presentation
 
-For a change of pace, here is my presentation describing my workflow for the Pl@ntNet iteration of Pasture Snap. 
+For a change of pace, here is my presentation describing my workflow and results for the Pl@ntNet iteration of Pasture Snap. 
 
 <iframe src="https://drive.google.com/file/d/1RjIKokgIVh8i1XVU_6jzZp9W6Gz4ced_/preview" width="640" height="480"></iframe>
 
