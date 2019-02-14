@@ -12,9 +12,9 @@ In the past month, I took a dive into a Kaggle competition: Quora Insincere Ques
 
 It was an impressively large labeled text data set, with over 1.3 million samples. The only feature given was the sequence of text, so natural language processing and recurrent neural networks were the tools of choice to tackle this problem. 
 
-I gave a talk sharing some of the things I learned from this competition and Kaggle in general. Here are the slides! 
+I gave a talk sharing some of the things I learned from this competition and Kaggle in general with the Kaggle NYC meetup community. Some of the things I go over include using pretrained word embeddings and using GPU kernels on Kaggle. Here are the slides! 
 
-<iframe src="https://drive.google.com/file/d/1DmDT5ry1Ixury8AHOsJNq76N3xGQPX9c/preview" width="100%"></iframe>
+<iframe src="https://drive.google.com/file/d/1DmDT5ry1Ixury8AHOsJNq76N3xGQPX9c/preview" width="100%" height="100%"></iframe>
 
 The private leader board also came out today. Congratulations to the winners, The Zoo! 
 
